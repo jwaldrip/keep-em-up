@@ -1,3 +1,5 @@
+$stdout.sync = true
+
 require 'bundler/setup'
 require 'net/https'
 require 'zlib'
