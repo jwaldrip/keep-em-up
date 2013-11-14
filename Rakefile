@@ -11,7 +11,7 @@ module Pinger
   def ping_sites!
     uri = URI('https://api.heroku.com/apps')
     req = Net::HTTP::Get.new(uri)
-    req.basic_auth 'jason@waldrip.net', 'c49e61c6fe4b76a52ce1ad2317ff5dbbdec2e16b'
+    req.basic_auth ENV['HEROKU_EMAIL'], ENV['HEROKU_API_KEY']
     req['Accept'] = 'application/vnd.heroku+json; version=3'
     http = Net::HTTP.new(uri.hostname, uri.port)
     http.use_ssl = true
